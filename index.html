@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt Input Form - Amrapali Ganesh Mandal</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .form-container {
+            background-color: transparent;
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .form-control {
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .form-control:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+            transform: translateY(-1px);
+        }
+        
+        .btn-primary {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+        
+        .form-label {
+            transition: all 0.3s ease;
+        }
+        
+        .form-group:hover .form-label {
+            color: #3b82f6;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        .form-group {
+            animation: fadeIn 0.5s ease forwards;
+            opacity: 0;
+        }
+        
+        .form-group:nth-child(1) { animation-delay: 0.05s; }
+        .form-group:nth-child(2) { animation-delay: 0.1s; }
+        .form-group:nth-child(3) { animation-delay: 0.15s; }
+        .form-group:nth-child(4) { animation-delay: 0.2s; }
+        .form-group:nth-child(5) { animation-delay: 0.25s; }
+        .form-group:nth-child(6) { animation-delay: 0.3s; }
+        .form-group:nth-child(7) { animation-delay: 0.35s; }
+        .form-group:nth-child(8) { animation-delay: 0.4s; }
+        
+        .logo-text {
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .form-control:read-only {
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+    <div class="form-container w-full max-w-md p-6">
+        <div class="text-center mb-6 fade-in">
+            <h1 class="text-2xl font-semibold mb-1 logo-text">Amrapali Ganesh Mandal</h1>
+            <p class="text-sm text-gray-500">Receipt Form</p>
+        </div>
+
+<script type="text/javascript">
+  var submitted = false;
+</script>
+
+<iframe name="hidden_iframe" id="hidden_iframe" style="display: none" 
+  onload="if(submitted){alert('Thank you for your message! I will get back to you soon.'); window.location.reload();}">
+</iframe>
+
+
+
+				<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeiQNFVwjevd3Q5wWf_o0llNqB7hlHxOqNloovRe8e6po9W0g/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true"  class="form" id="form1">
+        <div class="form-group mb-4">
+            <label for="date" class="form-label block text-sm font-medium text-gray-700 mb-1">
+                <i class="fas fa-calendar-alt mr-1 text-blue-500"></i> Date
+            </label>
+            <input type="text" id="date" name="entry.1920210632" class="form-control w-full px-3 py-2 rounded-md" readonly>
+        </div>
+        
+        <div class="form-group mb-4">
+            <label for="fullName" class="form-label block text-sm font-medium text-gray-700 mb-1">
+                <i class="fas fa-user mr-1 text-blue-500"></i> Full Name
+            </label>
+            <input type="text" id="fullName" name="entry.1148453572" class="form-control w-full px-3 py-2 rounded-md" placeholder="Enter Full Name">
+        </div>
+        
+        <div class="form-group mb-4">
+            <label for="email" class="form-label block text-sm font-medium text-gray-700 mb-1">
+                <i class="fas fa-envelope mr-1 text-blue-500"></i> Email
+            </label>
+            <input type="email" id="email" name="entry.334122996" class="form-control w-full px-3 py-2 rounded-md" placeholder="Enter Email">
+        </div>
+        
+        <div class="form-group mb-4">
+            <label for="phone" class="form-label block text-sm font-medium text-gray-700 mb-1">
+                <i class="fas fa-phone mr-1 text-blue-500"></i> Phone
+            </label>
+            <input type="tel" id="phone" name="entry.795694623" class="form-control w-full px-3 py-2 rounded-md" placeholder="Enter Phone Number">
+        </div>
+        
+        <div class="form-group mb-4">
+            <label for="address" class="form-label block text-sm font-medium text-gray-700 mb-1">
+                <i class="fas fa-map-marker-alt mr-1 text-blue-500"></i> Address
+            </label>
+            <textarea id="address" name="entry.516770145" rows="3" class="form-control w-full px-3 py-2 rounded-md" placeholder="Enter Address"></textarea>
+        </div>
+        
+        <div class="form-group mb-4">
+            <label for="amount" class="form-label block text-sm font-medium text-gray-700 mb-1">
+                <i class="fas fa-rupee-sign mr-1 text-blue-500"></i> Amount (in INR ₹)
+            </label>
+            <div class="relative">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">₹</span>
+                <input type="text" id="amount" name="entry.1956798574" class="form-control w-full pl-8 pr-3 py-2 rounded-md" placeholder="Enter Amount">
+            </div>
+        </div>
+        
+        <div class="form-group mb-6">
+            <label for="amountInWords" class="form-label block text-sm font-medium text-gray-700 mb-1">
+                <i class="fas fa-text-width mr-1 text-blue-500"></i> Amount in Words
+            </label>
+            <input type="text" id="amountInWords" name="entry.457195854" class="form-control w-full px-3 py-2 rounded-md" readonly>
+        </div>
+        
+        <div class="text-center fade-in" style="animation-delay: 0.45s;">
+            <button id="submitBtn" class="btn-primary bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-6 rounded-lg transition">
+                <i class="fas fa-paper-plane mr-1"></i> Submit
+            </button>
+          <input type="hidden" id="States" name="entry.370219160" value="1">
+        </div>
+    </div>
+</form>
+    <script>
+        // Auto-fill date with proper formatting
+        const today = new Date();
+        const dateField = document.getElementById('date');
+        const day = String(today.getDate()).padStart(2, '0');
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const year = today.getFullYear();
+        dateField.value = `${day}/${month}/${year}`;
+
+        // Auto-generate receipt number
+        const receiptNumberField = document.getElementById('receiptNumber');
+        receiptNumberField.value = `${year}-001`;
+
+        // Format number in Indian style (with commas)
+        function formatIndianNumber(num) {
+            const numStr = num.toString();
+            let result = '';
+            
+            // Handle numbers less than 1000
+            if (numStr.length <= 3) {
+                return numStr;
+            }
+            
+            // Get the last 3 digits
+            const lastThree = numStr.substring(numStr.length - 3);
+            
+            // Get remaining digits
+            const remaining = numStr.substring(0, numStr.length - 3);
+            
+            // Place commas after every 2 digits
+            let i = remaining.length;
+            let formattedRemaining = '';
+            
+            while (i > 0) {
+                const chunk = remaining.substring(Math.max(0, i - 2), i);
+                formattedRemaining = (i > 2 ? ',' : '') + chunk + formattedRemaining;
+                i -= 2;
+            }
+            
+            result = formattedRemaining + ',' + lastThree;
+            return result;
+        }
+
+        // Convert number to words (Indian numbering system)
+        function numberToWords(num) {
+            if (isNaN(num)) return '';
+            if (num === 0) return 'Zero Rupees';
+            
+            const units = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'];
+            const tens = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
+            
+            function convertLessThanThousand(n) {
+                if (n === 0) return '';
+                if (n < 20) return units[n];
+                if (n < 100) return tens[Math.floor(n / 10)] + (n % 10 !== 0 ? ' ' + units[n % 10] : '');
+                return units[Math.floor(n / 100)] + ' Hundred' + (n % 100 !== 0 ? ' ' + convertLessThanThousand(n % 100) : '');
+            }
+            
+            // Handle Indian numbering system with lakhs and crores
+            let result = '';
+            
+            if (num >= 10000000) { // crores
+                result += convertLessThanThousand(Math.floor(num / 10000000)) + ' Crore ';
+                num %= 10000000;
+            }
+            
+            if (num >= 100000) { // lakhs
+                result += convertLessThanThousand(Math.floor(num / 100000)) + ' Lakh ';
+                num %= 100000;
+            }
+            
+            if (num >= 1000) { // thousands
+                result += convertLessThanThousand(Math.floor(num / 1000)) + ' Thousand ';
+                num %= 1000;
+            }
+            
+            if (num > 0) {
+                result += convertLessThanThousand(num);
+            }
+            
+            return result.trim() + ' Rupees Only';
+        }
+
+        // Event listeners
+        const amountField = document.getElementById('amount');
+        const amountInWordsField = document.getElementById('amountInWords');
+        
+        amountField.addEventListener('input', function() {
+            // Remove non-numeric characters
+            let value = this.value.replace(/[^\d]/g, '');
+            
+            if (value) {
+                // Format with commas
+                const numericValue = parseInt(value);
+                this.value = formatIndianNumber(numericValue);
+                
+                // Convert to words
+                amountInWordsField.value = numberToWords(numericValue);
+            } else {
+                this.value = '';
+                amountInWordsField.value = '';
+            }
+        });
+
+        // Form submission
+        document.getElementById('submitBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            const fullName = document.getElementById('fullName').value;
+            const amount = amountField.value;
+            
+            if (!fullName) {
+                alert('Please enter the full name');
+                return;
+            }
+            
+            if (!amount) {
+                alert('Please enter the amount');
+                return;
+            }
+            
+            // Success message (in a real app, this would generate a PDF or save the data)
+            alert('Receipt generated successfully for ' + fullName);
+        });
+    </script>
+</body>
+</html>
