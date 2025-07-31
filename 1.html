@@ -173,14 +173,15 @@
         }
 
         // Update amount in words when amount changes
-        document.getElementById('amount').addEventListener('input', function() {
-            const amount = parseInt(this.value);
-            if (!isNaN(amount) && amount >= 0 && amount <= 100000) {
-                document.getElementById('amountInWords').value = numberToWords(amount);
-            } else {
-                document.getElementById('amountInWords').value = amount > 100000 ? 'Number out of range (max 1 lakh)' : '';
-            }
-        });
+document.getElementById('amount').addEventListener('input', function() {
+    const amount = parseInt(this.value);
+    if (!isNaN(amount) && amount >= 0 && amount <= 100000) {
+        document.getElementById('amountInWords').value = numberToWords(amount);
+    } else {
+        document.getElementById('amountInWords').value = amount > 100000 ? 'Number out of range (max 1 lakh)' : '';
+    }
+});
+
     </script>
 </body>
 </html>
