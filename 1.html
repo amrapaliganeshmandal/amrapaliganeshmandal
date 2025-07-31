@@ -3,9 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use Form</title>
+    <style>
+        body {<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Receipt Form</title>
     <style>
         body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            max-width: 700px;
+            margin: 30px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #e0eafc, #cfdef3);
+            color: #333;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+        .form-container:hover {
+            transform: translateY(-5px);
+        }
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #34495e;
+            font-size: 16px;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dfe6e9;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 14px;
+            background-color: #f9fbfc;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #0984e3;
+            box-shadow: 0 0 8px rgba(9, 132, 227, 0.3);
+        }
+        input[readonly] {
+            background-color: #dfe6e9;
+            cursor: not-allowed;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(90deg, #0984e3, #00b894);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background: linear-gradient(90deg, #00b894, #0984e3);
+            transform: translateY(-2px);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        @media (max-width: 500px) {
+            .form-container {
+                padding: 20px;
+            }
+            h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display: none"
+        onload="if(submitted){alert('Data is saved successfully!'); window.location.reload();}">
+    </iframe>
+    <div class="form-container">
+        <h2>Use Form</h2>
+        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSevcWEPkx_FpXdRppuzxqcIcrs-G-ZyIfBxgyVT76oEGGaonQ/formResponse"
+              method="post"
+              target="hidden_iframe"
+              onsubmit="submitted=true"
+              class="form"
+              id="form1">
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="entry.1615823889" placeholder="Enter Full Name">
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount (in numbers)</label>
+                <input type="number" id="amount" name="entry.236620940" placeholder="Enter Amount" min="0" max="100000">
+            </div>
+            <div class="form-group">
+                <label for="amountInWords">Amount in Words</label>
+                <input type="text" id="amountInWords" name="entry.129423602" readonly>
+            </div>
+            <div class="form-group">
+                <label for="address">Details</label>
+                <textarea id="address" name="entry.1675500683" rows="4" placeholder="Enter Address"></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        // Convert number to words (up to 1 lakh in Indian number system)
+        function numberToWords(num) {
+            if (num > 100000) return 'Number out of range (max 1 lakh)';
+            if (num === 0) return 'Zero';
+
+            const units = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];
+            const teens = ['Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'];
+            const tens = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
+
+            function convertBelowThousand(n) {
+                if (n === 0) return '';
+                if (n < 10) return units[n];
+                if (n < 20) return teens[n - 10];
+                if (n < 100) return `${tens[Math.floor(n / 10)]} ${units[n % 10]}`.trim();
+                return `${units[Math.floor(n / 100)]} Hundred ${convertBelowThousand(n % 100)}`.trim();
+            }
+
+            const lakh = Math.floor(num / 100000);
+            const thousand = Math.floor((num % 100000) / 1000);
+            const remainder = num % 1000;
+
+            let result = '';
+            if (lakh > 0) {
+                result += `${convertBelowThousand(lakh)} Lakh `;
+            }
+            if (thousand > 0) {
+                result += `${convertBelowThousand(thousand)} Thousand `;
+            }
+            if (remainder > 0) {
+                result += convertBelowThousand(remainder);
+            }
+
+            return result.trim() || 'Zero';
+        }
+
+        // Update amount in words when amount changes
+        document.getElementById('amount').addEventListener('input', function() {
+            const amount = parseInt(this.value);
+            if (!isNaN(amount) && amount >= 0 && amount <= 100000) {
+                document.getElementById('amountInWords').value = numberToWords(amount);
+            } else {
+                document.getElementById('amountInWords').value = amount > 100000 ? 'Number out of range (max 1 lakh)' : '';
+            }
+        });
+    </script>
+</body>
+</html>
             font-family: 'Segoe UI', Arial, sans-serif;
             max-width: 700px;
             margin: 30px auto;
